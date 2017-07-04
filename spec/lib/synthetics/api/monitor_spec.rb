@@ -48,6 +48,18 @@ describe Synthetics::API::Monitor do
     it_behaves_like 'a simple API request'
   end
 
+  describe '#get_script' do
+    let(:make_request) { subject.get_script }
+    let(:expected_params) do
+      {
+        method: 'GET',
+        path: '/monitors/TEST-MONITOR-UUID/script'
+      }
+    end
+
+    it_behaves_like 'a simple API request'
+  end
+
   describe '#destroy' do
     let(:make_request) { subject.destroy }
     let(:expected_params) do

@@ -25,6 +25,13 @@ module Synthetics
         )
       end
 
+      def get_script
+        request(
+          path: "/monitors/#{monitor_uuid}/script",
+          method: 'GET'
+        )
+      end
+
       def destroy
         request(path: "/monitors/#{monitor_uuid}", method: 'DELETE')
       end
